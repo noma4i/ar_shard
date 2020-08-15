@@ -1,3 +1,6 @@
+## 0.2.3
+- Removed pry require in runtime
+
 ## 0.2.2
 - Fixed missing connection if loaded from YAML
 - Added tests for multiple connection switches with another block

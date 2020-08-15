@@ -1,5 +1,4 @@
 require 'active_record'
-require 'pry'
 
 module ActiveRecord
   mattr_accessor :klass_name
