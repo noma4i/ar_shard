@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ar_shard (0.2.1)
+    ar_shard (0.2.2)
       activerecord (>= 6)
 
 GEM
