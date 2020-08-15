@@ -1,6 +1,6 @@
 # AR Shard
 
-AR Shard is non-intrusive extenstion for ActiveRecord to add threadsafe Model based sharding. As this gem uses `connection_handlers it can work only with ActiveRecord 6 and above.
+AR Shard is non-intrusive extenstion for ActiveRecord to add threadsafe Model based sharding or just multidatabase connection. As this gem uses connection_handlers it can work only with ActiveRecord 6 and above.
 
 ## Features
 - Shard only part of you ActiveRecord w/o sharing connection
