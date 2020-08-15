@@ -4,13 +4,14 @@ AR Shard is non-intrusive extenstion for ActiveRecord to add threadsafe Model ba
 
 ## Features
 - Multiple Databases support for Rails5
+- Define config as a Proc
 - Shard only part of you ActiveRecord w/o sharing connection
 - Work with you Sharded Model and AR model at the same time
 - Threadsafe. Battle-tested with Sidekiq and 4 mixed Databases
 
 ## Limitations
 - Doesn't care about migrations
-- Define config as a Proc. `Due to nature of connection_handlers all DB connections are established at boot time`
+- Due to nature of connection_handlers all DB connections are established at boot time
 - if data structure is different between databases you should use `ModelName.reset_column_information`
 
 ## Installation
