@@ -1,4 +1,5 @@
 require 'active_record'
+require 'pry'
 
 module ActiveRecord
   mattr_accessor :klass_name
@@ -24,9 +25,9 @@ module ActiveRecord
 
         config_data.each do |shard|
           key, conf = shard.flatten
-          handler = lookup_connect(key)
+          handler = lookup_connect(key.to_sym)
 
-          connections[key] = handler.establish_connection(conf)
+          connections[key.to_sym] = handler.establish_connection(conf)
         end
 
         connections
