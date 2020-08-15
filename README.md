@@ -1,20 +1,24 @@
 # AR Shard
 
-AR Shard is non-intrusive extenstion for ActiveRecord to add threadsafe Model based sharding or just multidatabase connection. As this gem uses connection_handlers it can work only with ActiveRecord 6 and above.
+AR Shard is non-intrusive extenstion for ActiveRecord to add threadsafe Model based sharding or just multidatabase connection. As this gem uses connection_handlers it can work only with ActiveRecord version 5 and above.
 
 ## Features
+- Multiple Databases support for Rails5
 - Shard only part of you ActiveRecord w/o sharing connection
 - Work with you Sharded Model and AR model at the same time
 - Threadsafe. Battle-tested with Sidekiq and 4 mixed Databases
-- Define config as a Proc. `Due to nature of connection_handlers all DB connections are established at boot time`
 
+##Limitations
+- Doesn't care about migrations
+- Define config as a Proc. `Due to nature of connection_handlers all DB connections are established at boot time`
+- if data structure is different between databases you should use `ModelName.reset_column_information`
 
 ## Installation
 
 Add this line to your application’s Gemfile:
 
 ```ruby
-gem 'ar_shard', '~> 0.2'
+gem 'ar_shard', '~> 1.0'
 ```
 
 ## Usage
@@ -103,7 +107,7 @@ To get started with development:
 git clone https://github.com/noma4i/ar_shard.git
 cd ar_shard
 bundle install
-bundle exec rake test
+bundle exec appraisal rake test
 ```
 
 ## License

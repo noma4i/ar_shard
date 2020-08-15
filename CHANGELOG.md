@@ -1,3 +1,6 @@
+## 1.0.0
+- Added Rails5 support
+
 ## 0.2.3
 - Removed pry require in runtime
 
