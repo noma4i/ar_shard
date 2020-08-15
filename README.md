@@ -43,6 +43,28 @@ class ShardRecord < ActiveRecord::Base
 end
 ```
 
+ Where `shards.yml` is like:
+
+```yaml
+- shard_1:
+    adapter: mysql2
+    host: blabla
+    username: blabla
+    password: secret
+    database: remote_database_name
+    port: 3306
+    pool: 10
+- shard_2:
+    adapter: postgresql
+    host: blabla
+    username: blabla
+    password: secret
+    database: shard_name
+    port: 5432
+    pool: 10
+```
+
+
 given we have models like:
 
 ```ruby
