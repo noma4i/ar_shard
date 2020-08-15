@@ -14,6 +14,8 @@ module ActiveRecord
   end
 
   module ConnectionHandling
+    mattr_accessor :connection_handlers, instance_accessor: false, default: {}
+
     def connected_shards(shards: nil)
       @connected_shards ||= begin
         config_data = parse_config(shards)
@@ -45,14 +47,21 @@ module ActiveRecord
     end
 
     def lookup_connect(handler_key)
-      connection_handlers[handler_key] ||= ActiveRecord::ConnectionAdapters::ConnectionHandler.new
+      if defined?(connection_handlers)
+        connection_handlers[handler_key] ||= ActiveRecord::ConnectionAdapters::ConnectionHandler.new
+      else
+        @@connection_handlers[handler_key] ||= ActiveRecord::ConnectionAdapters::ConnectionHandler.new
+      end
     end
 
     def with_shard(handler_key, &blk)
       shard_model.isolated_connection = connected_shards[handler_key].connection
-      yield
+      return_value = yield
+      return_value.load if return_value.is_a? ActiveRecord::Relation
+      return_value
     ensure
       shard_model.isolated_connection = nil
     end
   end
 end
+
