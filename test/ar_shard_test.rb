@@ -3,12 +3,21 @@ require 'test_helper'
 class ClusterRecord
   connected_shards shards: [
     { shard_1: { adapter: 'sqlite3', database: 'shard_1' } },
-    { shard_2: { adapter: 'sqlite3', database: 'shard_2' } },
-    { shard_3: { adapter: 'sqlite3', database: 'shard_3' } }
+    { shard_2: { adapter: 'sqlite3', database: 'shard_2' } }
   ]
 end
 
 class ARShardTest < ShardTesting
+  DBS = %w[shard_1 shard_2].freeze
+
+  def setup
+    prepar_chunk(dbs: DBS)
+  end
+
+  def teardown
+    teardown_list(dbs: DBS)
+  end
+
   def test_main_db
     assert_equal 'main', User.last.name
   end

@@ -1,9 +1,6 @@
-- shard_1:
+- dyn_shard_1:
     adapter: sqlite3
-    database: shard_1
-- shard_2:
+    database: dyn_shard_1
+- dyn_shard_2:
     adapter: sqlite3
-    database: shard_2
-- shard_3:
-    adapter: sqlite3
-    database: shard_3
+    database: dyn_shard_2
