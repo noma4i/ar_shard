@@ -15,8 +15,6 @@ module ActiveRecord
 
   module ConnectionHandling
     def connected_shards(shards: nil)
-      raise ARShard::Error.new 'Shards config is EMPTY!'
-
       @connected_shards ||= begin
         config_data = parse_config(shards)
         @@klass_name = self.name
