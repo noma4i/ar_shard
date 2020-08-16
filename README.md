@@ -1,4 +1,6 @@
 # AR Shard
+[![Gem Version](https://badge.fury.io/rb/ar_shard.svg)](https://badge.fury.io/rb/ar_shard)
+[![Build Status](https://travis-ci.com/noma4i/ar_shard.svg?branch=master)](https://travis-ci.com/noma4i/ar_shard)
 
 AR Shard is non-intrusive extenstion for ActiveRecord to add threadsafe Model based sharding or just multidatabase connection. As this gem uses connection_handlers it can work only with ActiveRecord version 5 and above.
 
