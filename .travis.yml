@@ -6,6 +6,6 @@ rvm:
 before_install: gem install bundler -v 2.1.4
 gemfile:
   - gemfiles/rails_5.gemfile
-  - gemfiles/rails_5.gemfile
+  - gemfiles/rails_6.gemfile
 
 script: 'bundle exec rake test'
