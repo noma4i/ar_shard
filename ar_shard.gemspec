@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['noma4i@gmail.com']
 
   spec.summary       = 'Isolated Multibase Support for ActiveRecord Models with dynamic config'
-  spec.description   = 'Isolated Multibase Support for ActiveRecord Models with dynamic config'
+  spec.description   = 'DB Rails Sharding. Isolated Multibase Support for ActiveRecord Models with dynamic config'
   spec.homepage      = 'https://github.com/noma4i/ar_shard'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
